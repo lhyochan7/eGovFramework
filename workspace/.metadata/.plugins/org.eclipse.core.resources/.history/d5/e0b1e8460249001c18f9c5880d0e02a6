@@ -1,0 +1,5 @@
+package egovframework.sample.service.common;
+
+public class JDBCUtil {
+
+}

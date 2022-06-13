@@ -1,0 +1,5 @@
+package app.mvc.members;
+
+public class MemberJoinPage {
+
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>폼태그 과제</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var select = document.getElementById('age');
+				var sltAge = '<option value=null>선택하세요!</option>';
+				for (var i = 1; i <= 100; i++) {
+					sltAge += '<option value='+i+'>'+i+'</option>';
+					select.innerHTML = sltAge;	
+				}
+
+			};
+			function showinfo() {
+				var name = document.getElementById('name').value;
+				var age = document.getElementById('age').value;
+				var gender = document.getElementById('gender').value;
+				
+				var hobby = document.getElementsByName('hobby');
+				var hobbyList = '';
+				
+				for(var i = 0; i < hobby.length; i++) {
+					if(hobby[i].checked) {
+						hobbyList += (hobby[i].value + ',');
+					}
+				}
+				alert('이름: ' + name + '\n' +
+					  '나이: ' + age + '\n' + 
+					  '성별: ' + gender + '\n' +
+					  '취미: ' +  hobbyList);
+			}
+
+
+		</script>
+	</head>
+	<body>
+		<form action="/Web02/Practice/result.jsp" onsubmit="showinfo()">
+			<label for="name">이름:&nbsp;</label>
+			<input id="name" type="text" name="name"> <br>
+			<label for="age">나이:&nbsp;</label>
+			<select id="age" name="age">
+			
+			</select> <br>
+			성별:&nbsp;
+			<input type="radio" name="gender" value="남성">
+			<label>남성</label>
+			<input type="radio" name="gender" value="여성">
+			<label>여성</label>
+			<input type="radio" name="gender" value="기타/무응답">
+			<label>기타/무응답</label> <br>
+			취미:&nbsp;
+			<input type="checkbox" name="hobby" value="운동">
+			<label>운동</label>
+			<input type="checkbox" name="hobby" value="바둑">
+			<label>바둑</label>
+			<input type="checkbox" name="hobby" value="등산">
+			<label>등산</label>
+			<input type="checkbox" name="hobby" value="게임">
+			<label>게임</label> <br>
+			<input name="submit" type="submit" value="전송">
+			<button id="cancel" type="reset">취소</button>
+		</form>
+	</body>
+</html>

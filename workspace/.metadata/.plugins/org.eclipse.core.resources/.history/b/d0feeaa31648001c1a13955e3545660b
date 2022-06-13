@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="guestbook.model.Message" %>
+<%
+request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="message" class="guestbook.model.Message">
+	<jsp:setProperty name="message" property="*"/>
+</jsp:useBean>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>글쓰기 저장 페이지</h1>
+${message.id}<br>
+${message.guestName}<br>
+${message.password}<br>
+${message.message}<br>
+
+</body>
+</html>

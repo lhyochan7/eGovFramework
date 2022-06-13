@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/hello2">
+		횟수 : <input type="text" name="cnt"/>
+		
+		<button type="button">요청하기</button>
+<!-- 		<input type="button" value="a버튼" /> -->
+	</form>
+</body>
+</html>

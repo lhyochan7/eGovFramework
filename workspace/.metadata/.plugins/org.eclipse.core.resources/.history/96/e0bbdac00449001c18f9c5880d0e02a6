@@ -1,0 +1,53 @@
+package egovframework.sample.service.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import egovframework.sample.service.SampleDAO;
+import egovframework.sample.service.SampleVO;
+
+@Repository("daoJDBC")
+public class SampleDAOJDBC implements SampleDAO {
+	private Connection conn;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	private final String SAMPLE_INSERT="insert into sample(id,title,reg_user,"
+			+ "content, reg_date) values(?,?,?,?,now())";
+	
+	
+	
+	
+	
+	public SampleDAOJDBC() {
+		System.out.println("===>SampleDAOJDBC 생성");
+	}
+	@Override
+	public void insertSample(SampleVO vo)throws Exception{
+		System.out.println("===>JDBC로 insertSample() 기능처리");
+	}
+	@Override
+	public void updateSample(SampleVO vo)throws Exception{
+		System.out.println("===>JDBC로 updateSample() 기능처리");
+	}
+	@Override
+	public void deleteSample(SampleVO vo)throws Exception{
+		System.out.println("===>JDBC로 deleteSample() 기능처리");
+	}
+	@Override
+	public SampleVO selectSample(SampleVO vo)throws Exception{
+		System.out.println("===>JDBC로 selectSample() 기능처리");
+		return null;
+	}
+	@Override
+	public List<SampleVO> selectSampleList(SampleVO vo)throws Exception{
+		System.out.println("===>JDBC로 selectSampleList 기능처리");
+		return null;
+	}
+
+}

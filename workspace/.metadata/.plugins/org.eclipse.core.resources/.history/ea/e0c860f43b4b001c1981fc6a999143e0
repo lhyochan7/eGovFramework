@@ -1,0 +1,45 @@
+package egovframework.sample.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import egovframework.sample.service.SampleDAO;
+import egovframework.sample.service.SampleVO;
+@Repository("daoSpring")
+public class SampleDAOSpring implements SampleDAO{
+	public SampleDAOSpring() {
+		System.out.println("SampleDAOSpring생성자");
+	}
+
+	@Override
+	public void insertSample(SampleVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateSample(SampleVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteSample(SampleVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public SampleVO selectSample(SampleVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<SampleVO> selectSampleList(SampleVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package app.mvc.members;
+
+public class MemberConfig {
+	private static ApplicationContext ac = new AnnotationConfigApplicationContext(SpringAutoAppConfig.class);
+
+    public static ApplicationContext getApplicationContext() {
+        return ac;
+    }
+}

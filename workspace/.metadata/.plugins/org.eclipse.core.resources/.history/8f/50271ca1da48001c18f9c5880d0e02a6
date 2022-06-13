@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	<context:component-scan base-package="egovframework">
+	
+	</context:component-scan>
+	<bean id="sampleService" 
+	class="egovframework.sample.service.impl.SampleServiceImple">
+		<property name="sampleDAO" ref="ibatis"></property>
+		<property name="version" value="SampleWeb-1.0.0"></property>
+		<!-- <constructor-arg ref="jdbc"></constructor-arg>
+		<constructor-arg value="SampleWeb-1.0.0"></constructor-arg> -->
+	</bean>
+	<bean id="jdbc" class="egovframework.sample.service.impl.SampleDAOJDBC"></bean>
+	<bean id="ibatis" class="egovframework.sample.service.impl.SampleDAOIBatis"></bean>
+	<bean id="collectionBean" class="egovframework.sample.service.impl.CollectionBean">
+		<property name="addressList">
+			<props>
+				<prop key="김철수">대구 수성구 만촌동</prop>
+				<prop key="홍길동">대구 동구 효목동</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

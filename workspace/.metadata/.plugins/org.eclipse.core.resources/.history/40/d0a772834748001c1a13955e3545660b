@@ -1,0 +1,13 @@
+package egovframework.sample.service;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class CollectionBeanClient {
+
+	public static void main(String[] args) {
+		GenericXmlApplicationContext contianer=
+				new GenericXmlApplicationContext("egovframework/spring/");
+
+	}
+
+}

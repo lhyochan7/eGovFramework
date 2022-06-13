@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="EgovMainDAO">
+
+    <select id="selectIntteClsList" parameterType="IntteVO" resultType="EgovMap">
+        SELECT A.intte_seq,
+               A.cls_seq,
+               A.cls_nm
+        FROM tb_intte_cls A
+            INNER JOIN tb_intte B ON A.intte_seq = B.intte_seq AND B.use_yn = 'Y'
+        WHERE A.intte_seq = #{intteSeq}
+            AND A.cls_seq = #{clsSeq}
+    </select>
+    
+    <select id="selectIntteNameList" resultType="EgovMap">
+          SELECT intte_nm, intte_seq
+          FROM tb_intte;
+    </select>
+    
+    <select id="checkUser" parameterType="MemberVO" resultType="EgovMap">
+        SELECT B.intte_mbr_seq as memberId, A.intte_nm as intteNm, B.intte_mbr_id as userId
+        FROM tb_intte A
+        INNER JOIN tb_intte_mbr B
+        WHERE A.intte_seq = B.intte_seq AND A.intte_seq = #{intteSeq} AND B.intte_mbr_id = #{userId}
+    </select>
+    
+    <select id="searchCls" resultType="EgovMap">
+        SELECT A.cls_seq, 
+               A.cls_nm, 
+               A.subj_nm, 
+               A.cls_st_date, 
+               A.cls_fns_date, 
+               CASE
+                   WHEN (A.use_yn = "Y") THEN "사용"
+                   ELSE "미사용"
+               END AS use_yn,
+               A.cret_dt
+        FROM tb_intte_cls A
+        INNER JOIN tb_intte B ON A.intte_seq = B.intte_seq AND B.use_yn = 'Y'
+        WHERE A.intte_seq = ${intteSeq}
+        <if test="searchOpt != null and searchText != null">
+	        <choose>
+	            <when test="searchOpt == 1">
+	                AND A.cls_nm LIKE CONCAT('%', #{searchText}, '%')
+	            </when>
+	             <when test="searchOpt == 2">
+	                AND A.subj_nm LIKE CONCAT('%', #{searchText}, '%')
+	            </when>
+	            <otherwise>
+	                AND (A.cls_nm LIKE CONCAT('%', #{searchText}, '%') OR A.subj_nm LIKE CONCAT('%', #{searchText}, '%'))
+	            </otherwise>
+	        </choose>
+        </if>
+    </select>
+    
+
+</mapper>

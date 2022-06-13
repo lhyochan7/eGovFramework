@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.container {
+	display: flex;
+	flex-direction : column;
+	justify-content: center;
+    align-items: center;
+}
+
+.container #loginTitle {
+    margin-left: -17em;
+    font-size:20pt;
+}
+
+.container #form {
+    width:500px;
+}
+
+.formInputs {
+    width:48%;
+}
+
+#loginBTN {
+	width:100%;
+}

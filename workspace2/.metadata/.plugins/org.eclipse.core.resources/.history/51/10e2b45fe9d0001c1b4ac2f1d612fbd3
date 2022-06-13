@@ -1,0 +1,25 @@
+package app.aop.annotation;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class AspectUsingAnnotation {
+	
+	@Around(value = "execution(* app.member.service.MemberServiceImpl.join(..))")
+	public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
+		System.out.println("*** Around 로직 시작 **");
+		
+		Object result = joinPoint.proceed();
+		
+		System.out.println("*** Around 로직 종료 **");
+		return result;
+	}
+	
+	@Before(value = "execution(* app.member.service.MemberServiceImpl.join(..))")
+	public void doBefore() {
+		System.out.println("*** Before 로직 ***");
+	}
+}

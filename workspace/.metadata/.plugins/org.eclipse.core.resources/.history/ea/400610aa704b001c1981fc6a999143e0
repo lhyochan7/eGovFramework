@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<p>Click the button below to return the id of the form the button belongs to.</p>
+
+<form id="myForm">
+  <button id="myBtn" type="button" onclick="myFunction()">Try it</button>
+</form>
+
+<p id="demo">xxx</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myBtn").form.id;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+select * from guestbook;
+
+drop table sample;
+
+create table sample(
+id int(12) primary key,
+title varchar(200),
+reg_user varchar(20),
+content varchar(2000),
+reg_date date default now()
+);
+
+desc sample;
+
+insert into sample value(1,'JAVA Programming','관리자','자바 관련 글만 등록하세요.',now())
+select * from sample;

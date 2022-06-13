@@ -1,0 +1,15 @@
+package egovframework.sample.service;
+
+public interface SampleDAO {
+
+	void insertSample(SampleVO vo) throws Exception;
+
+	void updateSample(SampleVO vo) throws Exception;
+
+	void deleteSample(SampleVO vo) throws Exception;
+
+	void selectSample(SampleVO vo) throws Exception;
+
+	void selectSampleList(SampleVO vo) throws Exception;
+
+}

@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="jdbc.ConnectionProvider" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="guestbook.dao.MessageDao" %>
+<%@ page import="guestbook.model.Message" %>
+<%
+Connection conn=ConnectionProvider.getConnection();
+MessageDao mdao=MessageDao.getInstance();
+Message message=mdao.select(conn, 3);
+out.print(message.getId()+"<br>");
+out.print(message.getGuestName()+"<br>");
+out.print(message.getPassword()+"<br>");
+out.print(message.getMessage()+"<br>");
+
+/* Message message=new Message();
+message.setGuestName("김철수");
+message.setPassword("1234");
+message.setMessage("반갑습니다..");
+int r=mdao.insert(conn, message);
+out.print("===>"+r); */
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

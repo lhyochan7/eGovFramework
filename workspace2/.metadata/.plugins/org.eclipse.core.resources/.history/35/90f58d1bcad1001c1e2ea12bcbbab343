@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/calculator" method="post">
+		x : <input type="text" name="x"/>
+		operator : <input type="text" name="oper"/>
+		y : <input type="text" name="y"/>
+			
+		<button type="submit">계산하기</button>
+	</form>
+</body>
+</html>

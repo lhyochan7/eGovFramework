@@ -1,0 +1,145 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffef9c61c41, pid=41348, tid=37000
+#
+# JRE version:  (11.0.15+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.15+8-LTS-149, mixed mode, sharing, tiered, unknown gc, windows-amd64)
+# Problematic frame:
+# C  [jimage.dll+0x1c41]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: 
+
+Host: Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz, 12 cores, 15G,  Windows 11 , 64 bit Build 22000 (10.0.22000.675)
+Time: Wed May 25 17:40:15 2022 대한민국 표준시 elapsed time: 2.607184 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+Stack: [0x00000085f6c00000,0x00000085f6d00000],  sp=0x00000085f6cfdb90,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [jimage.dll+0x1c41]
+
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x000000000000301c
+
+
+Registers:
+RAX=0x0000000000000c00, RBX=0x00000085f6cfdc81, RCX=0x00007ffef9c66000, RDX=0x0000000000000c00
+RSP=0x00000085f6cfdb90, RBP=0x00000085f6cfdc80, RSI=0x00000000000074c5, RDI=0x00000085f6cfdc80
+R8 =0x00007ffef9c64278, R9 =0x000000000000001c, R10=0x00007ffed6e5bd00, R11=0x00007ffef9c66000
+R12=0x00000085f6cffb20, R13=0x000001a83f8e1580, R14=0x00000085f6cfecf0, R15=0x00007ffed6e5bd90
+RIP=0x00007ffef9c61c41, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x00000085f6cfdb90)
+0x00000085f6cfdb90:   000001a83f8d0000 00007fff06ec901a
+0x00000085f6cfdba0:   0000000000000000 00007fff0439f5dc
+0x00000085f6cfdbb0:   000001a83f9023d0 00007ffef9c61dcf
+0x00000085f6cfdbc0:   000000000000000b 000001a83f9023d0
+0x00000085f6cfdbd0:   0000000000000020 00007fff0439f3a2
+0x00000085f6cfdbe0:   0000000000000000 00000085f6cfe0e8
+0x00000085f6cfdbf0:   0000000000000000 00007fff06ea6800
+0x00000085f6cfdc00:   0000000000000000 00007ffef9c60000
+0x00000085f6cfdc10:   0000000000000000 00007fff0439f24e
+0x00000085f6cfdc20:   0000fc2584a8eba6 00000085f6cfdcb0
+0x00000085f6cfdc30:   00007ffed6e3ad30 0000000000000017
+0x00000085f6cfdc40:   000001a83f9023d0 00000085f6cfecf0
+0x00000085f6cfdc50:   000000000000000b 00007ffef9c627b1
+0x00000085f6cfdc60:   0000000000000000 00000085f6cfdcb0
+0x00000085f6cfdc70:   00000085f6cfdca0 00000085f6cfdca8
+0x00000085f6cfdc80:   61622e6176616a2f 692f6b646a2f6573 
+
+Instructions: (pc=0x00007ffef9c61c41)
+0x00007ffef9c61c21:   b6 ca 44 8a 12 33 c1 48 ff c2 45 84 d2 75 e9 4d
+0x00007ffef9c61c31:   8b 03 0f ba f0 1f 33 d2 49 8b cb f7 f6 48 63 c2
+0x00007ffef9c61c41:   41 8b 14 81 41 ff 50 08 85 c0 7e 24 8a 0f eb 10
+0x00007ffef9c61c51:   69 c0 93 01 00 01 0f b6 c9 33 c1 8a 0b 48 ff c3 
+
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+
+Dynamic libraries:
+0x00007ff73fbf0000 - 0x00007ff73fbff000 	C:\Program Files\Java\jdk-11.0.15\bin\java.exe
+0x00007fff06ea0000 - 0x00007fff070a9000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff053c0000 - 0x00007fff0547d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff04760000 - 0x00007fff04ad9000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff04390000 - 0x00007fff044a1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff00d80000 - 0x00007fff00d95000 	C:\Program Files\Java\jdk-11.0.15\bin\VCRUNTIME140.dll
+0x00007fff00c90000 - 0x00007fff00ca8000 	C:\Program Files\Java\jdk-11.0.15\bin\jli.dll
+0x00007fff05480000 - 0x00007fff0552e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff05ef0000 - 0x00007fff05f93000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff06dc0000 - 0x00007fff06e5e000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff06b00000 - 0x00007fff06c20000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff04d40000 - 0x00007fff04eec000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff044b0000 - 0x00007fff044d6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffeec740000 - 0x00007ffeec9e5000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467\COMCTL32.dll
+0x00007fff06190000 - 0x00007fff061b9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff04ba0000 - 0x00007fff04cb2000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff046c0000 - 0x00007fff0475d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffeff0a0000 - 0x00007ffeff0aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff05fa0000 - 0x00007fff05fd1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffeef590000 - 0x00007ffeef62b000 	C:\Program Files\Java\jdk-11.0.15\bin\msvcp140.dll
+0x00007ffed6610000 - 0x00007ffed7126000 	C:\Program Files\Java\jdk-11.0.15\bin\server\jvm.dll
+0x00007fff06180000 - 0x00007fff06188000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fff00950000 - 0x00007fff00959000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff05530000 - 0x00007fff0559f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffefb260000 - 0x00007ffefb293000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff03580000 - 0x00007fff03598000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff00930000 - 0x00007fff00940000 	C:\Program Files\Java\jdk-11.0.15\bin\verify.dll
+0x00007ffef1400000 - 0x00007ffef1621000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffef1170000 - 0x00007ffef11a1000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff04cc0000 - 0x00007fff04d3f000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffef17f0000 - 0x00007ffef1818000 	C:\Program Files\Java\jdk-11.0.15\bin\java.dll
+0x00007ffef9c60000 - 0x00007ffef9c6a000 	C:\Program Files\Java\jdk-11.0.15\bin\jimage.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.15\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467;C:\Program Files\Java\jdk-11.0.15\bin\server
+
+VM Arguments:
+java_command: <unknown>
+java_class_path (initial): <not set>
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:/Program Files/Java/jdk-11.0.15/bin/server;C:/Program Files/Java/jdk-11.0.15/bin;C:\Program Files\Java\jdk-11.0.15\bin;C:\Program Files (x86)\Java\jre1.8.0_331\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Bandizip\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.3.0\;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Users\HUSTAR25\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\HUSTAR25\AppData\Local\Programs\Python\Python310\;C:\Users\HUSTAR25\AppData\Local\Microsoft\WindowsApps;;C:\Users\HUSTAR25\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\bin;;C:\Users\HUSTAR25\Desktop\eGovFrameDev-3.10.0-64bit\eclipse;
+USERNAME=HUSTAR25
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22000 (10.0.22000.675)
+
+CPU:total 12 (initial active 0) 
+
+Memory: 4k page, system-wide physical 16212M (54M free)
+TotalPageFile size 65364M (AvailPageFile size 0M)
+current process WorkingSet (physical memory assigned to process): 7M, peak: 7M
+current process commit charge ("private bytes"): 3M, peak: 3M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.15+8-LTS-149) for windows-amd64 JRE (11.0.15+8-LTS-149), built on Mar  9 2022 22:42:32 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.

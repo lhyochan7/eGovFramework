@@ -1,0 +1,9 @@
+package app.mvc;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/mvc-model2")
+public class MVCModel2 extends HttpServlet {
+
+}

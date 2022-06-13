@@ -1,0 +1,48 @@
+package app.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/calculator")
+public class MyCalculator extends HttpServlet {
+
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		// 횟수
+		String cntstr = request.getParameter("cnt");
+		if(cntstr == null || cntstr.equals("")) {
+			cntstr = "10";
+		}
+		
+		try {
+			Integer.parseInt(cntstr);	
+		} catch(NumberFormatException e) {
+			cntstr = "10";
+		}
+		
+		int cnt = Integer.parseInt(cntstr);
+		
+		// 이름
+		String name = request.getParameter("name");
+		
+		
+		PrintWriter out = response.getWriter();
+		for(int i=0; i<cnt; i++) {
+			out.println((i+1) + " : " + name + "님 안녕하세요<br/>");	
+		}
+		
+	}
+
+	
+}

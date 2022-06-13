@@ -1,0 +1,8 @@
+package app.servlet;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/api")
+public class MyApiServlet {
+	
+}

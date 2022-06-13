@@ -1,0 +1,39 @@
+package app.aop.annotation;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class AspectUsingAnnotation {
+	
+	@Pointcut("execution(* app.member.service.MemberServiceImpl.join(..))")
+	private void join() {}
+	
+	@Pointcut("execution(* app.member.service.MemberServiceImpl.findMember(..))")
+	private void findMember() {}
+	
+	@Around(value = "findMember()")
+	public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
+		System.out.println("*** Around 로직 시작 **");
+		
+		Object result = joinPoint.proceed();
+		
+		System.out.println("*** Around 로직 종료 **");
+		return result;
+	}
+	
+	@Before(value = "join()")
+	public void doBefore(JoinPoint joinPoint) {
+		System.out.println("*** Before 로직 ***");
+	}
+	
+	@AfterReturning(value = "findMember()")
+	public void doReturn() {
+		
+	}
+}

@@ -1,0 +1,37 @@
+package egovframework.sample.service.impl;
+
+import egovframework.sample.service.SampleService;
+
+public class SampleServiceImple implements SampleService {
+	private SampleDAOIBatis sampleDAO;
+	public SampleServiceImple() throws Exception{
+		System.out.println("===>SampleServiceImple 생성자1");
+		//sampleDAO=new SampleDAOJDBC();
+	}
+	public SampleServiceImple(SampleDAOIBatis sampleDAO) {
+		System.out.println("===>SampleServiceImple 생성자2");
+		this.sampleDAO=sampleDAO;
+	}
+	
+	@Override
+	public void insertSample() throws Exception{
+		sampleDAO.insertSample();
+	}
+	@Override
+	public void updateSample() throws Exception{
+		sampleDAO.updateSample();
+	}
+	@Override
+	public void deleteSample() throws Exception{
+		sampleDAO.deleteSample();
+	}
+	@Override
+	public void selectSample() throws Exception{
+		sampleDAO.selectSample();
+	}
+	@Override
+	public void selectSampleList() throws Exception{
+		sampleDAO.selectSampleList();
+	}
+	
+}

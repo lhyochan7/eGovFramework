@@ -1,0 +1,24 @@
+package egovframework.sample.service;
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import egovframework.sample.service.impl.CollectionBean;
+
+public class CollectionBeanClient {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext contianer=
+				new GenericXmlApplicationContext("egovframework/spring/context-common.xml");
+		CollectionBean bean=(CollectionBean)contianer.getBean("collectionBean");
+		Set<String> li=bean.getAddressList();
+		for(String address:li) {
+			System.out.println(address.toString());
+		}
+		contianer.close();
+	}
+
+}

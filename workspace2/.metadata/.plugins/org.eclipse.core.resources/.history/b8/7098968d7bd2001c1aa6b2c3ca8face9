@@ -1,0 +1,5 @@
+package app.servlet;
+
+public class MyApiServlet {
+	
+}

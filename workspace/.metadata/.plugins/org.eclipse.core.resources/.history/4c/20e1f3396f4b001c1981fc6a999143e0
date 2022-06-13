@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h3>A demonstration of how to access a BUTTON element</h3>
+
+<p>Click to disable the BUTTON element:</p>
+
+<button type="button" id="myBtn" onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+ alert('확인');
+}
+</script>
+
+</body>
+</html>
